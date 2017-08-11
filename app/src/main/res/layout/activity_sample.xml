@@ -7,7 +7,7 @@
 	android:paddingRight="@dimen/activity_horizontal_margin"
 	android:paddingTop="@dimen/activity_vertical_margin"
 	android:paddingBottom="@dimen/activity_vertical_margin"
-	tools:context="com.buzzvil.buzznative.sample.SampleActivity"
+	tools:context="com.buzzvil.nativead.sample.SampleActivity"
 	tools:ignore="HardcodedText">
 	<ScrollView
 		android:layout_width="match_parent"
@@ -17,80 +17,6 @@
 			android:layout_width="match_parent"
 			android:layout_height="wrap_content"
 			android:orientation="vertical">
-			<LinearLayout
-				android:layout_width="match_parent"
-				android:layout_height="wrap_content"
-				android:orientation="horizontal">
-				<TextView
-					android:layout_width="wrap_content"
-					android:layout_height="wrap_content"
-					android:padding="8dp"
-					android:text="Placement"
-					android:textAppearance="@android:style/TextAppearance.Medium"/>
-				<Spinner
-					android:id="@+id/spinnerPlacements"
-					android:layout_width="match_parent"
-					android:layout_height="match_parent"
-					android:layout_gravity="right"
-					android:padding="8dp"/>
-			</LinearLayout>
-
-			<LinearLayout
-				android:layout_width="match_parent"
-				android:layout_height="wrap_content"
-				android:orientation="horizontal">
-				<TextView
-					android:layout_width="wrap_content"
-					android:layout_height="wrap_content"
-					android:padding="8dp"
-					android:text="Server"
-					android:textAppearance="@android:style/TextAppearance.Medium"/>
-
-				<Spinner
-					android:id="@+id/spinnerServer"
-					android:layout_width="match_parent"
-					android:layout_height="match_parent"
-					android:layout_gravity="right"
-					android:padding="8dp"/>
-			</LinearLayout>
-
-			<RadioGroup
-				android:layout_width="fill_parent"
-				android:layout_height="wrap_content"
-				android:orientation="vertical" >
-
-				<RadioButton
-					android:id="@+id/buttonGenderMale"
-					android:layout_width="wrap_content"
-					android:layout_height="wrap_content"
-					android:text="Male" />
-
-				<RadioButton
-					android:id="@+id/buttonGenderFemale"
-					android:layout_width="wrap_content"
-					android:layout_height="wrap_content"
-					android:text="Female" />
-			</RadioGroup>
-
-			<LinearLayout
-				android:layout_width="match_parent"
-				android:layout_height="wrap_content"
-				android:orientation="horizontal">
-				<TextView
-					android:layout_width="wrap_content"
-					android:layout_height="wrap_content"
-					android:padding="8dp"
-					android:text="Age:"
-					android:textAppearance="@android:style/TextAppearance.Medium"/>
-				<EditText
-					android:id="@+id/editAge"
-					android:layout_width="match_parent"
-					android:layout_height="wrap_content"
-					android:hint="Age"
-					android:inputType="number"
-					android:windowSoftInputMode="stateHidden" />
-			</LinearLayout>
-
 			<LinearLayout
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
@@ -112,18 +38,11 @@
 			</LinearLayout>
 
 			<Button
-				android:id="@+id/buttonApply"
+				android:id="@+id/buttonLoadAds"
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
 				android:padding="8dp"
-				android:text="Apply"/>
-
-			<Button
-				android:id="@+id/buttonRequestAds"
-				android:layout_width="match_parent"
-				android:layout_height="wrap_content"
-				android:padding="8dp"
-				android:text="Request Ads"/>
+				android:text="Load Ads"/>
 
 			<Button
 				android:id="@+id/buttonShowAd"

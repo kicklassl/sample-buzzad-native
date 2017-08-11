@@ -19,7 +19,7 @@ import com.buzzvil.buzzad.sdk.nativead.NativeAd;
 import java.util.List;
 
 public class SampleActivity extends Activity {
-	private View buttonRequestAds, buttonShowAd, buttonClearAds;
+	private View buttonLoadAds, buttonShowAd, buttonClearAds;
 	private EditText editCount;
 	private TextView textConsole;
 
@@ -33,13 +33,13 @@ public class SampleActivity extends Activity {
 		setContentView(R.layout.activity_sample);
 
 		editCount = (EditText) findViewById(R.id.editCount);
-		buttonRequestAds = findViewById(R.id.buttonRequestAds);
+		buttonLoadAds = findViewById(R.id.buttonLoadAds);
 		buttonShowAd = findViewById(R.id.buttonShowAd);
 		buttonClearAds = findViewById(R.id.buttonClearAds);
 
 		textConsole = (TextView) findViewById(R.id.textConsole);
 
-		buttonRequestAds.setOnClickListener(loadAds);
+		buttonLoadAds.setOnClickListener(loadAds);
 		buttonClearAds.setOnClickListener(clearAds);
 		buttonShowAd.setOnClickListener(showAd);
 
