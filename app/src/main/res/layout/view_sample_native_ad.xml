@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+       xmlns:tools="http://schemas.android.com/tools"
+       tools:ignore="HardcodedText,SpUsage,ContentDescription,RtlHardcoded">
+
+    <FrameLayout
+        android:id="@+id/vGroupNativeAdFrame"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/dark_goldenrod">
+        <ImageView
+            android:id="@+id/imageFullscreen"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="fitXY"
+            android:visibility="gone">
+        </ImageView>
+        <LinearLayout
+            android:id="@+id/vGroupNativeAd"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/bound_of_view"
+            android:orientation="vertical">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:background="@drawable/bound_of_view"
+                android:layout_weight="@integer/locker_header_ratio">
+            </FrameLayout>
+
+            <ScrollView
+                android:id="@+id/vPartMain"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="@integer/locker_container_ratio"
+                android:background="@drawable/bound_of_view"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bound_of_view"
+                    android:orientation="vertical">
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bound_of_view">
+
+                        <ImageView
+                            android:id="@+id/imageAdPlaceholder"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bound_of_view"
+                            android:adjustViewBounds="true"/>
+
+                        <ImageView
+                            android:id="@+id/imageCover"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bound_of_view"
+                            android:adjustViewBounds="true"/>
+                    </FrameLayout>
+
+
+                    <LinearLayout
+                        android:id="@+id/vDescription"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/native_large_margin"
+                        android:layout_marginRight="@dimen/native_large_margin"
+                        android:layout_marginTop="@dimen/native_margin"
+                        android:background="@drawable/bound_of_view"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:id="@+id/imageIcon"
+                            android:layout_width="@dimen/native_profile_size"
+                            android:layout_height="@dimen/native_profile_size"
+                            android:background="@drawable/bound_of_view"/>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/native_small_margin"
+                            android:background="@drawable/bound_of_view"
+                            android:orientation="vertical">
+
+                            <com.buzzvil.buzzad.sdk.control.BuzzTextView
+                                android:id="@+id/textTitle"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:contentDescription="ROBOTO_BOLD"
+                                android:ellipsize="end"
+                                android:includeFontPadding="false"
+                                android:maxLines="2"
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/native_title_font_size"
+                                android:textStyle="bold"
+                                android:background="@drawable/bound_of_view"/>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:background="@drawable/bound_of_view">
+
+                                <com.buzzvil.buzzad.sdk.control.BuzzTextView
+                                    android:id="@+id/textSource"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginRight="8dp"
+                                    android:contentDescription="ROBOTO_REGULAR"
+                                    android:textColor="@color/ad_text_light_gray"
+                                    android:textSize="@dimen/native_sponsored_font_size"
+                                    android:visibility="gone"
+                                    android:background="@drawable/bound_of_view"
+                                    tools:ignore="HardcodedText,SpUsage"/>
+
+                                <com.buzzvil.buzzad.sdk.control.BuzzTextView
+                                    android:id="@+id/textSponsored"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:contentDescription="ROBOTO_REGULAR"
+                                    android:drawablePadding="4dp"
+                                    android:gravity="center"
+                                    android:text="@string/sponsored"
+                                    android:textColor="@color/ad_text_light_gray"
+                                    android:textSize="@dimen/native_sponsored_font_size"
+                                    android:background="@drawable/bound_of_view"
+                                    tools:ignore="HardcodedText,SpUsage"/>
+
+                            </LinearLayout>
+
+                            <com.buzzvil.buzzad.sdk.control.BuzzTextView
+                                android:id="@+id/textDescription"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/native_margin"
+                                android:contentDescription="ROBOTO_LIGHT"
+                                android:ellipsize="end"
+                                android:maxLines="@integer/native_description_max_line"
+                                android:textColor="@color/ad_text_lighter_gray"
+                                android:textSize="@dimen/native_content_font_size"
+                                android:background="@drawable/bound_of_view"
+                                android:lineSpacingMultiplier="1.1"/>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/vGroupCallToAction"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:visibility="gone"
+                        android:background="@drawable/bound_of_view">
+
+                        <Button
+                            android:id="@+id/textCallToAction"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:contentDescription="ROBOTO_REGULAR"
+                            android:textColor="@android:color/white"
+                            android:textSize="@dimen/native_cta_font_size"
+                            tools:ignore="HardcodedText,SpUsage"
+                            android:background="@drawable/bound_of_view"/>
+
+                        <ImageView
+                            android:id="@+id/imageArrow"
+                            android:layout_width="@dimen/native_profile_size"
+                            android:layout_height="@dimen/native_profile_size"
+                            android:layout_toLeftOf="@id/textCallToAction"
+                            android:padding="@dimen/native_small_margin"
+                            android:src="@drawable/arrow_2_left"
+                            android:background="@drawable/bound_of_view"/>
+                    </RelativeLayout>
+                </LinearLayout>
+            </ScrollView>
+            <FrameLayout
+                android:id="@+id/vPartBottom"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="@integer/locker_footer_ratio">
+            </FrameLayout>
+        </LinearLayout>
+        <Button
+            android:id="@+id/buttonClose"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@android:string/cancel"
+            android:layout_gravity="top|right"/>
+    </FrameLayout>
+</merge>

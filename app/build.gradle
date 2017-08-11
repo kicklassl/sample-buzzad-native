@@ -1,0 +1,44 @@
+apply plugin: 'com.android.application'
+
+repositories {
+    jcenter()
+    maven {
+        url 'https://dl.bintray.com/outbrainmobile/obsdk'
+        credentials {
+            username = "OutbrainPublishers"
+            password = "adb1c1ae22255101ec2cf56f435a85879a349e5c"
+        }
+    }
+    maven { url "http://dl.appnext.com/" }
+    maven { url 'https://dl.bintray.com/buzzvil/maven/' }
+}
+
+android {
+    compileSdkVersion compileSdkVersionValue
+    buildToolsVersion buildToolVersionValue
+
+    defaultConfig {
+        applicationId "com.buzzvil.nativead.sample"
+        minSdkVersion 21
+        targetSdkVersion buildTargetSdkVersionValue
+        versionCode 1
+        versionName "1.1"
+        multiDexEnabled true
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    lintOptions {
+        abortOnError false
+    }
+    buildToolsVersion '25.0.2'
+}
+
+dependencies {
+    compile("com.buzzvil.buzzscreen:buzzad-sdk:+")
+    compile('com.android.support:multidex:1.0.1')
+}
