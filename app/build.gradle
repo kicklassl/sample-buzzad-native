@@ -16,7 +16,6 @@ repositories {
 android {
     compileSdkVersion compileSdkVersionValue
     buildToolsVersion buildToolVersionValue
-
     defaultConfig {
         applicationId "com.buzzvil.nativead.sample"
         minSdkVersion 21
@@ -25,9 +24,13 @@ android {
         versionName "1.1"
         multiDexEnabled true
     }
-
     buildTypes {
         release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+
+        debug {
             minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
@@ -39,6 +42,6 @@ android {
 }
 
 dependencies {
-    compile("com.buzzvil.buzzscreen:buzzad-sdk:+")
-    compile('com.android.support:multidex:1.0.1')
+    compile 'com.buzzvil.buzzad:buzzad-sdk:+'
+    compile 'com.android.support:multidex:1.0.1'
 }
