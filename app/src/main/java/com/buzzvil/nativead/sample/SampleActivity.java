@@ -62,7 +62,7 @@ public class SampleActivity extends Activity {
 			if (nativeAd != null) {
 				nativeAd.destroy();
 			}
-			nativeAd = new NativeAd(SampleActivity.this, "230653482367311");
+			nativeAd = new NativeAd(SampleActivity.this, "[YOUR_APP_KEY]");
 			nativeAd.setAdListener(adListener);
 			nativeAd.loadAds(count, true);
 		}
