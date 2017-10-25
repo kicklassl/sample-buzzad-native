@@ -124,5 +124,10 @@ public class SampleActivity extends Activity {
 		public void onClicked(Ad ad) {
 			Toast.makeText(getApplicationContext(), "Ad Clicked", Toast.LENGTH_SHORT).show();
 		}
+
+		@Override
+		public void onLanding(Ad ad, boolean success) {
+			Toast.makeText(getApplicationContext(), "Ad Landing:" + success, Toast.LENGTH_SHORT).show();
+		}
 	};
 }

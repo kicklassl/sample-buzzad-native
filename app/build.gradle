@@ -38,3 +38,10 @@ dependencies {
     compile 'com.buzzvil.buzzad:buzzad-sdk:+'
     compile 'com.android.support:multidex:1.0.1'
 }
+
+/*
+configurations.all {
+    resolutionStrategy.cacheChangingModulesFor 0, 'seconds'
+    resolutionStrategy.cacheDynamicVersionsFor 0, 'minutes'
+}
+*/
