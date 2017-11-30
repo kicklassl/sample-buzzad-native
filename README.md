@@ -2,7 +2,7 @@
 
 ```
 repositories {
-    maven { url "https://dl.bintray.com/buzzvil/buzzscreen/" }
+    maven { url "https://dl.bintray.com/buzzvil/maven/" }
     maven { url "http://dl.appnext.com/" }
 }
 ...
