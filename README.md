@@ -30,6 +30,18 @@ dependencies {
 }
 ```
 
+(Optional) 오프라인 빌드가 필요한경우
+
+- Dependency 추가: aar 파일 (https://slack-files.com/T02T3N2VD-F88LS5LPQ-234f25b3f0)
+
+```
+dependencies {
+	...
+	compile(name:'buzzad-sdk-1.9.9.aar', ext:'aar')
+	...
+}
+```
+
 ### Step 1: Setting User Profile(Optional)
 사용자 정보 세팅부분은 선택 사항입니다. 정보 세팅시 광고 효율이 높아지기 때문에 가능하다면 세팅을 권장합니다.
 
