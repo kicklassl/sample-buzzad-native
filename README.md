@@ -1,15 +1,14 @@
 ### Native ad design guideline
-- 디자인 가이드라인: https://goo.gl/1nCZhM
+- Design guideline: (English), (Korean)https://goo.gl/1nCZhM
 
-### Requirements
-- Min SDK
-	Android 4.0 (API Version 14) 이상
+### Requirements (TBD)
+- Min SDK: above Android 4.0 (API Version 14 )
 
-- 필수 퍼미션
+- Required permission
 ```
 <uses-permission android:name="android.permission.INTERNET" />
 ```
-- 권장 퍼미션
+- Recommended permission 
 ```
 <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
 <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
@@ -26,13 +25,12 @@ repositories {
 ...
 dependencies {
     compile("com.buzzvil.buzzad:buzzad-sdk:1.+")
-    compile('com.android.support:multidex:1.0.1') //메소드 수가 많아져 multidex 설정이 필요할 수 있습니다.
+    compile('com.android.support:multidex:1.0.1')
 }
 ```
 
-(Optional) 오프라인 빌드가 필요한경우
-
-- Dependency 추가: aar 파일 (https://slack-files.com/T02T3N2VD-F88LS5LPQ-234f25b3f0)
+(Optional) If you have to do offline build, add below dependency
+- (TBD) aar file: (https://slack-files.com/T02T3N2VD-F88LS5LPQ-234f25b3f0)
 
 ```
 dependencies {
@@ -43,7 +41,7 @@ dependencies {
 ```
 
 ### Step 1: Setting User Profile(Optional)
-사용자 정보 세팅부분은 선택 사항입니다. 정보 세팅시 광고 효율이 높아지기 때문에 가능하다면 세팅을 권장합니다.
+If you set an user profile, ad revenue will increase.
 
 ```
 BuzzSDK.setUserProfile(new UserProfile.Builder()
@@ -54,7 +52,7 @@ BuzzSDK.setUserProfile(new UserProfile.Builder()
 ```
 
 ### Step 2: Impl. AdListener
-광고 요청이 성공했을 때 광고 객체를 받아 UI 에 그려주는 콜백과 광고 요청이 실패했을 때 에러 처리를 위한 콜백을 구현해주는 부분.
+Callback function for the ad response.
 
 ```
 AdListener adListener = new AdListener() {
@@ -64,8 +62,6 @@ AdListener adListener = new AdListener() {
 
 		@Override
 		public void onAdLoaded(List<Ad> ads) {
-			//광고가 리턴되면 아래와 같이 광고를 reference 해두고, 필요한 시점에 그려주면 된다 (Step 4 참조)
-			
 			SampleActivity.this.ads = ads;
 			// Do somethins with `Ad` objects.
 		}
@@ -77,8 +73,8 @@ AdListener adListener = new AdListener() {
 ```
 
 ### Step 3: Loading Ads
-Step 2 에서 만든 adListener 를 사용하여 NativeAd 객체를 만들고, 이를 통해 광고 호출을 한다. 
-광고 요청 후 광고가 리턴될 때까지는 시간이 걸리므로, 광고가 그려져야 하는 시점 보다 미리 광고를 요청하면 좋다.
+Create the 'NativeAd' object using adListener(step 2) and request ads.
+It takes some time to get an ad response. we recommend to request ads earlier when it should be shown.
 
 ```
 NativeAd nativeAd = new NativeAd(SampleActivity.this, "230653482367311");
@@ -87,19 +83,19 @@ NativeAd nativeAd = new NativeAd(SampleActivity.this, "230653482367311");
 ```
 
 ### Step 4: Show Ads
-Step 2 에서 reference 해둔 ad 를 UI 에 그려준다.
+Render ads component into UI
 
 ```
 private void showAd(){
-	//커버이미지와 아이콘 이미지를 이미지뷰에 그려준다. 
+	//Render cover image and icon image
 	ad.getCoverImage().loadIntoView(imageAd);
 	ad.getIconImage().loadIntoView(imageIcon);
 	
-	//광고 타이틀과 content 를 각각 해당 텍스트뷰에 세팅해준다. 
+	//Set title and content 
 	titleTextView.setText(ad.getTitle()); 
 	contentTextView.setText(ad.getContent());
 	
-	//만약 callToAcation 이 함께 리턴되면, 클릭버튼 혹은 텍스트뷰에 세팅해준다. 
+	//Set CTA text
 	if (false == StringUtils.isEmpty(ad.getCallToAction())) {
 		callToActionTextView.setText(ad.getCallToAction());
 		callToActionTextView.setVisibility(View.VISIBLE); 
