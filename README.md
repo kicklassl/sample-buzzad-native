@@ -1,8 +1,8 @@
 ### Native ad design guideline
-- Design guideline: (English), (Korean)https://goo.gl/1nCZhM
+- Design guideline: https://goo.gl/1nCZhM
 
-### Requirements (TBD)
-- Min SDK: above Android 4.0 (API Version 14 )
+### Requirements
+- Min SDK: above Android 4.1 (API Version 16)
 
 - Required permission
 ```
@@ -26,17 +26,6 @@ repositories {
 dependencies {
     compile("com.buzzvil.buzzad:buzzad-sdk:1.+")
     compile('com.android.support:multidex:1.0.1')
-}
-```
-
-(Optional) If you have to do offline build, add below dependency
-- (TBD) aar file: (https://slack-files.com/T02T3N2VD-F88LS5LPQ-234f25b3f0)
-
-```
-dependencies {
-	...
-	compile(name:'buzzad-sdk-1.9.9.aar', ext:'aar')
-	...
 }
 ```
 
