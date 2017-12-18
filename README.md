@@ -30,7 +30,7 @@ dependencies {
 ```
 
 ### Step 1: Setting User Profile(Optional)
-If you set an user profile, ad revenue will increase.
+Setting an user profile generally leads to better monetization.
 
 ```
 BuzzSDK.setUserProfile(new UserProfile.Builder()
@@ -62,8 +62,8 @@ AdListener adListener = new AdListener() {
 ```
 
 ### Step 3: Loading Ads
-Create the 'NativeAd' object using adListener(step 2) and request ads.
-It takes some time to get an ad response. we recommend to request ads earlier when it should be shown.
+Create the `NativeAd` object with adListener(step 2) and request ads by calling the `loadAds()`.
+It takes some time to get an ad response. So we recommend to request ads earlier.
 
 ```
 NativeAd nativeAd = new NativeAd(SampleActivity.this, "230653482367311");
@@ -72,7 +72,6 @@ NativeAd nativeAd = new NativeAd(SampleActivity.this, "230653482367311");
 ```
 
 ### Step 4: Show Ads
-Render ads component into UI
 
 ```
 private void showAd(){
